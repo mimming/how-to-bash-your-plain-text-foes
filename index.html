@@ -1,0 +1,349 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+
+  <title>How to Bash Your Plain Text Foes</title>
+
+  <meta name="description" content="Bash is a powerful tool. It's great at bashing foes of plain text nature">
+  <meta name="author" content="Jenny Tong">
+
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=no">
+
+  <link rel="stylesheet" href="css/reveal.min.css">
+  <link rel="stylesheet" href="css/theme/default.css" id="theme">
+
+  <!-- For syntax highlighting -->
+  <link rel="stylesheet" href="lib/css/zenburn.css">
+
+  <!-- If the query includes 'print-pdf', include the PDF print sheet -->
+  <script>
+    if (window.location.search.match(/print-pdf/gi)) {
+      var link = document.createElement('link');
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = 'css/print/pdf.css';
+      document.getElementsByTagName('head')[0].appendChild(link);
+    }
+  </script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="js/transit.js"></script>
+
+  <!--[if lt IE 9]>
+  <script src="lib/js/html5shiv.js"></script>
+  <![endif]-->
+
+
+  <style>
+    .openlayers-map img {
+      margin: 0;
+    }
+
+    .slides section {
+      font-size: 125%;
+    }
+
+    .slides section img {
+      background: none;
+      box-shadow: none;
+      border: none;
+    }
+
+    .reveal pre code {
+      font-size: 120%;
+    }
+
+    ul.multicol li {
+      display: inline-block;
+      width: 400px;
+      height: 400px;
+    }
+
+    ul.multicol li li {
+      display: block;
+      width: auto;
+      height: auto;
+    }
+
+    .reveal section img {
+      max-height: 65%;
+    }
+  </style>
+
+</head>
+
+<body>
+
+<div class="reveal">
+
+  <!-- Any section element inside of this container is displayed as a slide -->
+  <div class="slides">
+
+
+    <section>
+      <h2>How to Bash Your Plain Text Foes</h2>
+      <img src="img/sandwich.png"><br/>
+      <small>Credit: <a href="http://xkcd.com/149/">xkcd.com/149/</a></small>
+    </section>
+
+    <section>
+      <div>
+        <img src="img/jenny.jpg" style="border-radius: 150px; float: left; margin-right: 40px; width: 300px;">
+        <br/>
+
+        <h3>Jenny Tong</h3>
+        Developer Advocate at Google
+        <br/>
+        <a href="http://google.com/+mimming">google.com/+mimming</a><br/>
+        <a href="https://twitter.com/mimmingcodes">@MimmingCodes</a><br/>
+      </div>
+
+    </section>
+
+    <section data-markdown>
+      <script type="text/template">
+        ## Jenny interrogates you
+
+        - About your shell experience: none? a little? lots?
+        - Have you programed before?
+      </script>
+    </section>
+
+
+    <section data-markdown>
+      <script type="text/template">
+        ## Agenda
+
+        - Getting around the with bash
+        - Copying stuff
+        - Philosophy of POSIX tools
+        - Finding files
+        - Regular expressions: How do they work?
+        - Working with text
+      </script>
+    </section>
+
+    <section>
+      <h2>Agenda</h2>
+      <img src="img/all-the-things.jpg"><br/>
+      <small>Credit: <a
+          href="http://hyperboleandahalf.blogspot.com/2010/06/this-is-why-ill-never-be-adult.html">Allie</a></small>
+    </section>
+
+
+<section>
+<h2>Getting around</h2>
+<pre class="fragment"><code class="bash" data-trim>
+# Where am I?
+$ pwd
+</code></pre>
+<pre class="fragment"><code class="bash" data-trim>
+# What's here?
+$ ls
+$ ls -al
+</code></pre>
+<pre class="fragment"><code class="bash" data-trim>
+# Go somewhere
+$ cd foo
+# Go back
+$ cd ..
+</code></pre>
+<pre class="fragment"><code class="bash" data-trim>
+# Directory stack
+$ pushd foo
+$ popd
+</code></pre>
+<pre class="fragment"><code class="bash" data-trim>
+# Make directory
+$ mkdir foo
+</code></pre>
+</section>
+
+    <section data-markdown>
+      <script type="text/template">
+        ## Magic stuff
+
+        - up arrow to get previous commands
+        - tab completes things
+        - ctrl + a and ctrl + e move around the line
+      </script>
+    </section>
+
+<section>
+<h2>File stuff</h2>
+<pre class="fragment"><code class="bash" data-trim>
+# Copy a file
+$ cp foo.txt bar.txt
+</code></pre>
+<pre class="fragment"><code class="bash" data-trim>
+# Move a file
+$ mv foo.txt bar.txt
+</code></pre>
+<pre class="fragment"><code class="bash" data-trim>
+# Download a file
+$ curl http://example.com > foo.html
+</code></pre>
+</section>
+
+    <section data-markdown>
+      <script type="text/template">
+      ## Exercise
+          
+      There are some plays here: http://mimming.com/presos/how-to-bash-your-plain-text-foes/shakes/
+        
+      0. Make a directory for them
+      0. Download all of them
+      0. unzip `complete.zip`
+      </script>
+    </section>
+    
+    <section>
+      Philosophy of POSIX tools
+      worse is better
+      simple tools that chain together
+      standard input, standard output and the |
+      getting help
+      --help
+      stack overflow
+      man command (omg so much)
+      exercise
+      figure out what the 'yes' tool does
+    </section>
+    
+    <section>
+      Finding stuff
+      find
+      grep
+    </section>
+    <section>
+      exercise
+      display lines in shakespeare that contain 'thou'
+    </section>
+
+    <section>
+      Simple regular expressions
+      [0-9]
+      [a-zA-Z]
+      \n
+      .
+      </section>
+    <section>
+      exercise
+      display lines in shakespeare that contain 'thou'
+      display lines in shakespeare that contain sycamore or evermore
+    </section>
+    
+    <section>
+      Working with text
+      cat - file to stream
+      egrep - grep but with regex - work with lines
+      tr - character swapper
+      sed - run regexes on a stream
+      awk - column manipulator
+      wc - count stuff
+      sort - sorts stuff (and uniques)
+      more - peek at output
+      > stream to a file
+    </section>
+    
+    <section>
+      all the stuff at once exercises
+      count the words in shakespeare's complete works
+      remove numbers
+      remove punctuation
+      count the number of words that end in 'ed' in shakespeare's complete works
+      use history command to count number of times you used the 'cd' command
+      requests from the audience!
+    </section>
+    
+    <section data-markdown>
+      <script type="text/template">
+        # THE END
+      </script>
+    </section>
+
+    <section data-markdown>
+      <script type="text/template">
+        ### These slides
+
+        [mimming.com/presos/how-to-bash-your-plain-text-foes](https://mimming.com/presos/how-to-bash-your-plain-text-foes)
+
+        <br/>
+
+        ### Contact me
+
+        [google.com/+mimming](http://google.com/+mimming)
+
+        [@MimmingCodes](https://twitter.com/mimmingcodes)
+
+        <br/>
+
+        ### Questions?<!-- .element: class="fragment" -->
+
+      </script>
+    </section>
+
+
+  </div>
+
+</div>
+
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.min.js"></script>
+
+<script>
+
+  // Full list of configuration options available here:
+  // https://github.com/hakimel/reveal.js#configuration
+  Reveal.initialize({
+    controls: true,
+    progress: true,
+    history: true,
+    center: true,
+
+    theme: "night", // available themes are in /css/theme
+    transition: Reveal.getQueryHash().transition || 'concave', // default/cube/page/concave/zoom/linear/fade/none
+
+    // Parallax scrolling
+    // parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+    // parallaxBackgroundSize: '2100px 900px',
+
+    // Optional libraries used to extend on reveal.js
+    dependencies: [
+      { src: 'lib/js/classList.js', condition: function () {
+        return !document.body.classList;
+      } },
+      { src: 'plugin/markdown/marked.js', condition: function () {
+        return !!document.querySelector('[data-markdown]');
+      } },
+      { src: 'plugin/markdown/markdown.js', condition: function () {
+        return !!document.querySelector('[data-markdown]');
+      } },
+      { src: 'plugin/highlight/highlight.js', async: true, callback: function () {
+        hljs.initHighlightingOnLoad();
+      } },
+      { src: 'plugin/zoom-js/zoom.js', async: true, condition: function () {
+        return !!document.body.classList;
+      } },
+      { src: 'plugin/notes/notes.js', async: true, condition: function () {
+        return !!document.body.classList;
+      } }
+    ]
+  });
+
+  // Update to display map on map-canvas when that slide loads
+  Reveal.addEventListener('slidechanged', function (event) {
+    if (event.indexh === 5) {
+      transitmapstart()
+    }
+  });
+
+</script>
+
+</body>
+</html>
