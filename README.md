@@ -1,15 +1,14 @@
-# Firebase Overview
+# How to Bash Your Plain Text Foes
 
-Firebase makes building realtime stuff easy. Jenny is going to show you how in about 30 minutes with slides, demos, and 
-little bit of live coding. Cut the live coding, and it takes about 10 minutes
+Slides from a 60-120 minute lecture about Bash, shell tools, and how to use them to bash your
+plain text foes. 
 
-Slides live on [mimming.com](https://mimming.com/presos/firebase-overview/)
+![animated gif preview](preview.gif)
+
+Slides live on [mimming.com](http://mimming.com/presos/how-to-bash-your-plain-text-foes/)
 
 ## Presented at
-- [neoHack14](http://www.meetup.com/Women-Who-Code-SF/events/182497842/?oc=evam) on 10 Sept 2014 - [tag](https://github.com/mimming/firebase-in-10-minutes/releases/tag/neoHacks14)
-- [Hack Duke](http://www.hackduke.com/tech-talks) on 14 Nov 2014 - [tag](https://github.com/mimming/firebase-overview/releases/tag/hackduke14) 
-- [GXdev](http://gxdev.eventbrite.com) 11 Jan 2015 - [tag](https://github.com/mimming/firebase-in-10-minutes/releases/tag/GXdev15)
-- [GDG Berkeley](http://www.meetup.com/GDGBerkeley/events/219265674/) on 21 Jan 2015 - [tag](https://github.com/mimming/firebase-overview/releases/tag/2015-01-21-gdg-berkeley-meetup)
+- SJSU, because why not on 11 Feb 2015
 
 ## About the deck
 
@@ -17,6 +16,6 @@ Forked from the wonderful [reveal.js](https://github.com/hakimel/reveal.js)
 
 ## License
 
-MIT licensed
+[Apache 2.0](http://www.apache.org/licenses/LICENSE-2.0)
 
-Copyright (C) 2014 Google, Inc.
+Copyright (C) 2015 Mimming Codes
