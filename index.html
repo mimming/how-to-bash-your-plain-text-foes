@@ -55,7 +55,7 @@
     }
 
     .reveal pre code {
-      font-size: 120%;
+      font-size: 150%;
     }
 
     ul.multicol li {
@@ -190,75 +190,163 @@ $ curl http://example.com > foo.html
 </code></pre>
 </section>
 
+<section data-markdown>
+<script type="text/template">
+## Exercise
+    
+There are some plays here: http://mimming.com/presos/how-to-bash-your-plain-text-foes/shakes/
+  
+0. Make a directory for them
+0. Download all of them
+0. **Bonus**: unzip `complete.zip`
+</script>
+</section>
+
+
+<section data-markdown>
+  <script type="text/template">
+    ## Philosophy break
+    
+    ![philosoraptor](img/philosoraptor.jpg)
+  </script>
+</section>
+<section data-markdown>
+  <script type="text/template">
+    ## Philosophy of POSIX tools
+
+    ![there, fixed it](img/crescenthammer.jpg) <!-- .element: class="fragment" -->
+  </script>
+</section>
+<section data-markdown>
+  <script type="text/template">
+    ## Philosophy of POSIX tools
+
+    - Worse is better
+    - Simple tools. Combine them.
+    - The magic pipe `|` It glues stuff together
+
+
+    <pre class="fragment"><code class="bash" data-trim>
+      $ cat foo.txt | grep bar
+    </code></pre>
+
+  </script>
+</section>
+
+    <section data-markdown>
+  <script type="text/template">
+    ## Figuring out a tool
+
+<pre class="fragment"><code class="bash" data-trim>
+# The help parameter
+$ ls --help
+ls: illegal option -- -
+usage: ls [-ABCFGHLOPRSTUW...] [file ...]
+</code></pre>
+<pre class="fragment"><code class="bash" data-trim>
+# Google and StackOverflow
+$ open https://www.google.com/#q=ls+bash
+</code></pre>
+<pre class="fragment"><code class="bash" data-trim>
+# man pages
+$ man ls
+# Waaay too much info
+# The 'q' key exits
+</code></pre>
+  </script>
+</section>
+<section data-markdown>
+  <script type="text/template">
+    ## Exercise
+    
+    There is a strange command called `yes`. Figure out what it does.
+  </script>
+</section>
+
+
     <section data-markdown>
       <script type="text/template">
-      ## Exercise
-          
-      There are some plays here: http://mimming.com/presos/how-to-bash-your-plain-text-foes/shakes/
-        
-      0. Make a directory for them
-      0. Download all of them
-      0. unzip `complete.zip`
+        ## Finding stuff
+<pre class="fragment"><code class="bash" data-trim>
+# Display file contents
+$ cat macbeth.txt
+</code></pre>
+<pre class="fragment"><code class="bash" data-trim>
+# Filter lines
+$ grep 'Thou' macbeth.txt
+# OR
+$ cat macbeth.txt | grep 'Thou'
+</code></pre>
+<pre class="fragment"><code class="bash" data-trim>
+# Find files
+$ find ./
+$ find ./ | grep 'mac'
+</code></pre>
+
       </script>
     </section>
-    
-    <section>
-      Philosophy of POSIX tools
-      worse is better
-      simple tools that chain together
-      standard input, standard output and the |
-      getting help
-      --help
-      stack overflow
-      man command (omg so much)
-      exercise
-      figure out what the 'yes' tool does
-    </section>
-    
-    <section>
-      Finding stuff
-      find
-      grep
-    </section>
-    <section>
-      exercise
-      display lines in shakespeare that contain 'thou'
+      <section data-markdown>
+        <script type="text/template">
+      ## Exercise
+      - Display lines in Macbeth that contain 'thou'
+      - Find all downloaded files that contain 'a' in their name (hint: you need both `find` and `grep`)
+      - Display lines in Macbeth that contain 'sycamore' or 'evermore'
+
+        </script>
     </section>
 
-    <section>
-      Simple regular expressions
-      [0-9]
-      [a-zA-Z]
-      \n
-      .
-      </section>
-    <section>
-      exercise
-      display lines in shakespeare that contain 'thou'
-      display lines in shakespeare that contain sycamore or evermore
+      <section data-markdown>
+        <script type="text/template">
+      ## Regular expressions
+          
+      a.k.a. fancy matchers
+
+      - `[0-9]`
+      - `[a-zA-Z]`
+      - `[tT]hou`
+      - `ACT [IVX]*`
+      - `.`
+      </script>
     </section>
-    
-    <section>
-      Working with text
-      cat - file to stream
-      egrep - grep but with regex - work with lines
-      tr - character swapper
-      sed - run regexes on a stream
-      awk - column manipulator
-      wc - count stuff
-      sort - sorts stuff (and uniques)
-      more - peek at output
-      > stream to a file
+      <section data-markdown>
+        <script type="text/template">
+      ## Execrise!
+      - Display lines in Macbeth that contain 'thou' or 'Thou'
+      - **Bonus**: Display lines that contain a tab character
+      </script>
     </section>
-    
-    <section>
-      all the stuff at once exercises
-      count the words in shakespeare's complete works
-      remove numbers
-      remove punctuation
-      count the number of words that end in 'ed' in shakespeare's complete works
-      use history command to count number of times you used the 'cd' command
-      requests from the audience!
+
+      <section data-markdown>
+        <script type="text/template">
+      ## Working with text
+      - `cat` - file to stream
+      - `egrep` - enhanced grep but with regex - work with lines
+      - `tr` - character swapper
+      - `sed` - run regexes on a stream
+      - `awk` - column manipulator
+      </script>
+    </section>
+    <section data-markdown>
+      <script type="text/template">
+        ## Working with text
+        - `wc` - count stuff
+        - `sort` - sorts stuff (and uniques)
+        - `more` - look before you leap
+        - `xargs` - turn standard output into arguments
+        - `>` - stream to a file
+      </script>
+    </section>
+
+      <section data-markdown>
+        <script type="text/template">
+      ## All the stuff at once exercises
+      - count the words in Shakespeare's complete works
+          - remove numbers
+          - remove punctuation
+      - Count the number of words that end in 'ed' in Shakespeare's complete works
+      - Use `history` command to count number of times you used the 'cd' command
+      - Your requests!
+      </script>
     </section>
     
     <section data-markdown>
